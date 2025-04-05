@@ -1,0 +1,474 @@
+:root{
+    --main-color: #333;
+    --sec-color: #414141;
+    --rd-color: white;
+    --gra-color: linear-gradient(to right,#FEAF00,#F8D442)
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+body{
+    background-image: var(--gra-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container{
+    margin: 20px 80px;
+    width: calc(100% - 160px);
+}
+
+nav{
+    background-color: var(--main-color);
+    color: var(--rd-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 300;
+    width: calc(100% - 160px);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+nav .logo{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+nav .logo i,
+nav .logo h3{
+    font-size: 24px;
+    color: #F8D442;
+}
+
+nav .menu{
+    list-style: none;
+    display: flex;
+    column-gap: 15px;
+}
+
+nav .menu li a{
+    text-decoration: none;
+    color: var(--rd-color);
+    padding: 5px 10px;
+    transition: all 0.5s;
+}
+
+nav .menu li a:hover{
+    background-image: var(--gra-color);
+    border-radius: 5px;
+    color: var(--main-color);
+}
+
+nav .hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+nav .hamburger i{
+    font-size: 24px;
+}
+
+.main{
+    margin-top: 100px;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .add-task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--sec-color);
+    padding: 10px 20px;
+}
+
+.main .add-task input{
+    width: 60%;
+    height: 60px;
+    background-color: var(--sec-color);
+    color: var(--rd-color);
+    outline: none;
+    border: none;
+}
+
+.main .add-task .add-task-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 46px;
+}
+
+.main .add-task .add-task-1 .btn{
+    width: 75px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-image: var(--gra-color);
+    cursor: pointer;
+}
+
+.main .add-task .add-task-1 i{
+    color: var(--rd-color);
+    cursor: pointer;
+}
+
+.main-con{
+    margin-top: 24px;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.main-con .task-base{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.main-con .task-base h3{
+    color: #F8D442;
+}
+
+.main-con .task-base .search-sorts{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.main-con .task-base .search-sorts .search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3px;
+    background-image: var(--gra-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 65%;
+}
+
+.main-con .task-base .search-sorts .searching{
+    width: 85%;
+    height: 100%;
+    background-color: var(--sec-color);
+    color: var(--rd-color);
+    outline: none;
+    border: 0.5px solid #F8D442;
+    padding: 10px 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.main-con .task-base .search-sorts .search i{
+    background-color: #F8D442;
+    height: 100%;
+    cursor: pointer;
+    color: #333;
+}
+
+.main-con .task-base .search-sorts .sorting-butn{
+    color: var(--rd-color);
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+}
+
+.main-con .task-base .search-sorts .sorting-butn span{
+    position: absolute;
+    background-color: var(--main-color);
+    top: 35px;
+    right: -20px;
+    font-size: 16px;
+    font-weight: normal;
+    width: 220px;
+    border-radius: 5px;
+    display: none;
+    border: 2px solid var(--sec-color);
+}
+
+.main-con .task-base .search-sorts .sorting-butn span ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-con .task-base .search-sorts .sorting-butn span ul li{
+    margin: 8px;
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+.main-con .task-base .search-sorts .sorting-butn span ul li:hover{
+    padding-left: 8px;
+    background-image: var(--gra-color);
+    color: var(--main-color);
+    border-radius: 5px;
+}
+
+.main-con .task-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--sec-color);
+    padding: 10px 20px;
+    width: 100%;
+    color: var(--rd-color);
+}
+
+.main-con .task-info .lis{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+    height: 40px;
+}
+
+.main-con .task-info .lis button{
+    width: 75px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-image: var(--gra-color);
+    cursor: pointer;
+}
+
+.main-con .task-info .lis .del-btn{
+    background: linear-gradient(230deg, #ff0000, #ff4d4d)
+}
+
+
+@media (min-width : 576px ) and (max-width: 992px) {
+
+    nav{
+        background-color: var(--main-color);
+        color: var(--rd-color);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 40px;
+        position: fixed;
+        top: 0;
+        z-index: 300;
+        width: calc(100% - 80px);
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    nav .menu{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        background-color: var(--main-color);
+    }
+
+    nav .menu li a{
+        display: block;
+        width: auto;
+        margin: 5px;
+    }
+
+    nav .menu.active{
+        display: flex;
+    }
+
+    nav .hamburger{
+        display: block;
+    }
+
+    .container{
+        margin: 10px 24px;
+        width: calc(100% - 80px);
+    }
+    
+    .main .add-task input {
+        width: 48%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .main .add-task .add-task-1 {
+        column-gap: 24px;
+    }
+
+    .main .add-task .add-task-1 .btn {
+        width: 60px;
+        height: 24px;
+        font-size: 14px;
+    }
+
+    .main .add-task .add-task-1 i {
+        font-size: 14px;
+    }
+
+    .main-con .task-base h3 {
+        font-size: 16px;
+        width: auto;
+    }
+
+    .main-con .task-base .search-sorts {
+        width: auto;
+    }
+
+    .main-con .task-base .search-sorts .searching{
+        font-size: 12px;
+    }
+
+    .main-con .task-base .search-sorts .search i {
+        font-size: 14px;
+    }
+
+    .main-con .task-base .search-sorts .sorting-butn {
+        font-size: 14px;
+    }
+
+    .main-con .task-info {
+        font-size: 14px;
+    }
+
+    .main-con .task-info .lis button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width : 576px) {
+
+    nav{
+        background-color: var(--main-color);
+        color: var(--rd-color);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 40px;
+        position: fixed;
+        top: 0;
+        z-index: 300;
+        width: calc(100% - 48px);
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    nav .menu{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        background-color: var(--main-color);
+    }
+
+    nav .menu li a{
+        display: block;
+        width: auto;
+        margin: 5px;
+    }
+
+    nav .menu.active{
+        display: flex;
+    }
+
+    nav .hamburger{
+        display: block;
+    }
+
+    .container{
+        margin: 10px 24px;
+        width: calc(100% - 48px);
+    }
+    
+    .main .add-task input {
+        width: 48%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .main .add-task .add-task-1 {
+        column-gap: 24px;
+    }
+
+    .main .add-task .add-task-1 .btn {
+        width: 60px;
+        height: 24px;
+        font-size: 14px;
+    }
+
+    .main .add-task .add-task-1 i {
+        font-size: 14px;
+    }
+
+    .main-con .task-base h3 {
+        font-size: 16px;
+        width: auto;
+    }
+
+    .main-con .task-base .search-sorts {
+        width: auto;
+    }
+
+    .main-con .task-base .search-sorts .searching{
+        font-size: 12px;
+    }
+
+    .main-con .task-base .search-sorts .search i {
+        font-size: 14px;
+    }
+
+    .main-con .task-base .search-sorts .sorting-butn {
+        font-size: 14px;
+    }
+
+    .main-con .task-info {
+        font-size: 14px;
+    }
+
+    .main-con .task-info .lis button {
+        font-size: 14px;
+    }
+}
